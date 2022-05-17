@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<!-- This is a "Mobile First" Responsive Design, the default is Mobile
+    and the media queries adjust for larger screen (larger than 768px) -->
+<head>
+<link rel="stylesheet" type="text/css" href="commonV3.css">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="avgthreatlabs-verification" content="e537610cfaa05adde6b10b2a3da1151b52ae7bb0" >
+<meta name="norton-safeweb-site-verification" content="8p4g2vherfipmzas-pe9iavuoiilphn5dfob4qysib2avz9jssv-5fcyjg6-nu7ymf0l4win16zb2hu4mgpgju0lc72sjqog1syg1u-i1zlmx6nn1fs1g2pwjalaa-yp" > 
+<title>Contact Me</title>
+<meta name="Description" content="" >
+<meta name="Keywords" content="" >
+<meta http-equiv="cache-control" content="no-store" >
+<link rel="icon" href="favicon.ico" type="image/x-icon" >
+<link rel="stylesheet" href="rmm/rmenu.css" type="text/css" />
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
+<script type="text/javascript" src="JQuery/jquery.min.js"></script>
+<script type="text/javascript" src="rmm/rmenu.js"></script>
+<script type="text/javascript" src="js/RandomQuote.js"></script>
+<script src="js/RETest.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38367520-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<style>
+    table#RETestform, table#RETestform td {
+        border: none !important;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<div class="content-container">
+
+<!-- <img class="header-image" alt="Header Image" src="Images/bluebison2.png"> -->
+        <div class="header" style="text-align: center;"><h1>MWSoftware.org // Mike's Software</h1></div>
+        <!-- Set following two lines to choose RMM style: minimal, graphite, or sapphire -->
+        <nav class="rmm-navbar minimal  " >
+        <div class="rmm" data-menu-title = "Menu" data-menu-style = "minimal">
+            <ul>
+                <li><a href='index.html'>Home</a></li>
+                <li><a href='https://www.deadboltedit.org' target="_blank">DeadboltEdit</a></li>
+                <li><a href='retest.html'>RegEx Tester</a></li>
+                <li><a href='resources.html'>Resources</a></li>
+            </ul>
+        </div>
+        </nav>
+
+<div class="row" style="width: 99%; text-align: center;">
+
+<h2><span style="color: rgb(0, 85, 150);">Regular Expression Tester/Debugger</span></h2>
+
+</div>
+
+<div class="row">
+<div class="col-12" style="overflow: hidden;">
+<form>
+<!-- <table id="RETestform" bgcolor=silver cellpadding=2 style="width: 99%; max-width: 600px; text-align: left;"> -->
+<!-- <table id="RETestform" bgcolor=silver cellpadding=2 style="width: 99%; text-align: left;"> -->
+<table id="RETestform" bgcolor=silver cellpadding=2 text-align: left;">
+<TR>
+<TD VALIGN=TOP>
+
+<FORM NAME="RegExTest">
+
+<TABLE BORDER=5 BGCOLOR=SILVER CELLPADDING=2>
+<!-- <TR>
+<TD COLSPAN=2 ALIGN=CENTER style="font-size: large; color: blue">
+<B>RegEx Tester/Debugger</B></TD>
+</TR> -->
+
+<TR>
+<!-- <TD COLSPAN=2 WIDTH="50%"> --> 
+<TD COLSPAN=2> 
+<TABLE BORDER=0 CELLPADDING=2>
+
+<TR>
+<TD COLSPAN=2><B>Input:</B></TD>
+</TR>
+
+<TR>
+<TD ALIGN=RIGHT>Regular expression</TD>
+<TD>
+<INPUT style="font: 14px Helvetica"
+    TYPE=TEXT
+    NAME=inputRegEx
+    PLACEHOLDER="Regular Expression to test"
+    VALUE="" 
+    SIZE=50
+    onInput=actionNewInput(form)>
+</TD>
+</TR>
+<tr>  </tr>
+<TR>
+<TD ALIGN=RIGHT>Test String</TD>
+<TD>
+ <INPUT style="font: 14px Helvetica"
+    TYPE=TEXT 
+    NAME=inputTestText
+    SIZE=50
+    PLACEHOLDER="Test string"
+    VALUE="" 
+    onInput=actionNewInput(form) >
+</TD>
+</TR>
+
+<TR>
+<TD ALIGN=left>
+<INPUT
+    type="checkbox"
+    name="chkboxGlobal"
+    onChange=eventEvalFlagChange(this.form)
+    checked="checked"> Global
+</TD>
+
+<TD ALIGN=left COLSPAN=2>
+<INPUT
+    type="checkbox"
+    onChange=eventEvalFlagChange(this.form)
+    name="chkboxCaseInsensitive"> Case Insensitive
+</TD>
+</TR>
+
+</TABLE>
+</TD></TR>
+
+<TR>
+<TD>
+
+<TABLE BORDER=0 CELLPADDING=2>
+<TR>
+<TD ALIGN=left COLSPAN=2>
+<INPUT 
+    type="checkbox"
+    name="chkboxAutoEval"
+    checked="checked"
+    onChange=eventAutoEvalChange(this.form)>Evaluate Automatically as Typed
+
+</TD>
+<TD ALIGN=CENTER>
+<INPUT 
+    TYPE=BUTTON
+    NAME="buttonEval" 
+    VALUE="Evaluate"
+    disabled="true"
+    onClick=actionBtnEvaluate(this.form)>
+
+
+</TD>
+</TR>
+<TR>
+<TD COLSPAN=2><B>Result:</B></TD>
+</TR>
+
+<TR>
+<TD ALIGN=RIGHT></TD>
+<TD>
+<textarea readonly name="results" cols="60" rows="10" style="font: 14px Helvetica"></textarea>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+
+</FORM></TD>
+
+</TR>
+</table>
+</form>
+
+</div>
+
+</div>
+
+<!-- RegEx Quick Ref -->
+<div style="margin-left:20px">
+<div ALIGN=LEFT>
+<h3>Regular Expression Quick Reference</h3>
+</div>
+<h4><u>Character classes</u></h4>
+<pre>
+.           any character except newline
+\w \d \s    word, digit, whitespace
+\W \D \S    not word, digit, whitespace
+[abc]       any of a, b, or c
+[^abc]      not a, b, or c
+[a-g]       character between a & g
+</pre>
+
+<h4><u>Anchors</u></h4>
+<pre>
+^abc$       start / end of the string
+\b          word boundary
+</pre>
+
+<h4><u>Escaped Characters</u></h4>
+<pre>
+\. \* \\    escaped special characters
+\t \n \r    tab, linefeed, carriage return
+\u0024      unicode escaped $
+</pre>
+
+<h4><u>Groups & Lookaround</u></h4>
+<pre>
+(abc)       capture group
+\1          backreference to group #1
+(?:abc)     non-capturing group
+(?=abc)     positive lookahead
+(?!abc)     negative lookahead
+</pre>
+
+<h4><u>Quantifiers & Alternation</u></h4>
+<pre>
+a* a+ a?    0 or more, 1 or more, 0 or 1
+a{5} a{2,}  exactly five, two or more
+a{1,3}      between one & three
+a+? a{2,}?  match as few as possible
+ab|cd       match ab or cd
+</pre></div>
+<!-- End: RegEx Quick Ref -->
+
+<div class="footer">
+<span style="text-align: center; color: rgb(0, 85, 150);">//www.mwsoftware.org</span>
+<hr>
+<!-- <font size=-2>Copyright 2012 - 2020 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Michael Wright &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved</font> -->
+<span style="font-size: 10px;">Copyright 2012 - 2021 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Michael Wright &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved</span>
+</div>
+
+</div>
+</body>
+</html>
