@@ -1,10 +1,10 @@
-/*
-RETest.js
-
-Developer: Michael Wright
-License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
-Copyright 2021, 2022 Michael Wright
-*/
+//
+// RETest.js
+//
+// Developer: Michael Wright
+// License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
+// Copyright 2021, 2022 Michael Wright
+//
 
 
 // One of the eval flag was changed on the form
